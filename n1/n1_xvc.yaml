@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-07-08T06:02:42Z"
+  labels:
+    app: n1
+  name: n1
+  namespace: default
+  resourceVersion: "458490"
+  uid: 09dfeea9-4af3-4f12-b131-9a0414ec3459
+spec:
+  clusterIP: 10.233.33.192
+  clusterIPs:
+  - 10.233.33.192
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31168
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: n1
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
